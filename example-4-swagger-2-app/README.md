@@ -4,7 +4,7 @@ Otevřít projekt v IntelliJ Idea & spustit hlavní třídu.
 
 Swagger JSON je zde:
 
-	http://localhost:8080/v2/api
+	http://localhost:8080/v2/api-docs
 
 Swagger UI je zde:
 
