@@ -14,6 +14,7 @@ import javax.json.Json;
 import javax.json.JsonObject;
 import javax.json.JsonReader;
 import java.io.StringReader;
+import java.util.Optional;
 
 @Slf4j
 @Service
@@ -46,7 +47,7 @@ public class KafkaConsumer {
                     log.info("TODO DELETE");
                     String stringId = payload.getString("payload");
                     log.info("ID to delete = {}", Integer.parseInt(stringId));
-                    customerRepository.deleteById(Integer.parseInt(stringId));
+                    customerRepository.deleteCustomer(Integer.parseInt(stringId));
                     break;
                 default:
                     throw new UnsupportedOperationException("Unknown type: " + eventType);

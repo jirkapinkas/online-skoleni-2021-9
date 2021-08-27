@@ -1,0 +1,31 @@
+server:
+  port: 8080
+spring:
+  # Na zaklade teto konfigurace Spring vytvori objekt typu DataSource
+  # Alternativne bychom mohli zapojit @Bean typu DataSource
+  datasource:
+    url: jdbc:hsqldb:hsql://localhost/eshop
+    username: sa
+    password:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    open-in-view: false
+  # Spring Data REST
+  # http://localhost:8080/api
+  data:
+    rest:
+      base-path: /api
+      # Pouze interfacy s @RepositoryRestResource(exported=true) budou pouzivane ve Spring Data REST
+      detection-strategy: annotated
+# http://localhost:8080/swagger-ui.html
+# http://localhost:8080/v3/api-docs
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
